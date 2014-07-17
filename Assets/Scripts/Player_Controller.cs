@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Camera_Controller : MonoBehaviour {
+public class Player_Controller: MonoBehaviour {
 
     public float speed;
 	

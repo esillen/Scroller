@@ -4,6 +4,7 @@ using System.Collections;
 public class Obstacle_script : MonoBehaviour {
 
     public float speed;
+    public Obstacle_spawner os;
 	// Use this for initialization
 	void Start () {
 	
@@ -15,8 +16,17 @@ public class Obstacle_script : MonoBehaviour {
         Vector3 v = transform.position;
         v.z = transform.position.z - speed*Time.deltaTime;
         transform.position = v;
-        if (transform.position.z <= -10) {
+        if (transform.position.z <= -1) {
             Destroy(this.gameObject);
         }
 	}
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            os.spawning = false;
+        }
+
+
+    }
 }
